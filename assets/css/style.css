@@ -241,8 +241,11 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background-size: cover;
+  background: url("../img/hero-bg.jpg") top center;
 }
 
 #hero:before {
@@ -257,10 +260,16 @@ h6 {
 }
 
 #hero .hero-container {
-  position: relative;
+  /* position: relative;
   z-index: 2;
-  min-width: 300px;
+  min-width: 300px; */
+  background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de transparencia */
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
 }
+
+
 
 #hero h1 {
   margin: 0 0 10px 0;
