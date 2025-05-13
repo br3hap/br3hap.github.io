@@ -19,6 +19,8 @@
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
+  --header-text-color: #1f2937;
+  --footer-text-color: white;
 }
 
 /* Dark Mode Variables */
@@ -33,6 +35,8 @@
   --border-color: #374151;
   --shadow-color: rgba(0, 0, 0, 0.2);
   --highlight-color: rgba(109, 139, 255, 0.1);
+  --header-text-color: #f3f4f6;
+  --footer-text-color: #f3f4f6;
 }
 
 /* Reset & Base Styles */
@@ -155,6 +159,14 @@ img {
   height: var(--header-height);
   display: flex;
   align-items: center;
+}
+
+.dark-mode .header {
+  background-color: rgba(18, 18, 18, 0.95);
+}
+
+.dark-mode .footer {
+  background-color: rgba(18, 18, 18, 0.95);
 }
 
 .header .container {
