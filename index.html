@@ -13,12 +13,17 @@
 
   <body>
     <div id="root">
+      <!-- Reading Progress Indicator -->
+      <div class="reading-progress" role="progressbar" aria-label="Progreso de lectura" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="reading-progress-fill"></div>
+      </div>
+
       <!-- Theme Toggle Button -->
-      <div class="theme-toggle">
+      <button class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
-      </div>
+      </button>
 
       <!-- Header y Navegación -->
       <header class="header">
@@ -26,13 +31,13 @@
           <div class="logo">
             <a href="#inicio">Portafolio</a>
           </div>
-          <nav class="nav-menu">
-            <div class="menu-toggle">
+          <nav class="nav-menu" aria-label="Navegación principal">
+            <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
               <span></span>
               <span></span>
               <span></span>
-            </div>
-            <ul class="menu">
+            </button>
+            <ul class="menu" role="list">
               <li><a href="#inicio" class="active">Inicio</a></li>
               <li><a href="#sobre-mi">Sobre mí</a></li>
               <li><a href="#proyectos">Proyectos</a></li>
@@ -121,16 +126,28 @@
       <section id="proyectos" class="section bg-alt">
         <div class="container">
           <h2 class="section-title">Mis Proyectos</h2>
+
+          <!-- Project Filters -->
+          <div class="project-filters" role="group" aria-label="Filtrar proyectos por tecnología">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="Python">Python</button>
+            <button class="filter-btn" data-filter="Odoo">Odoo</button>
+            <button class="filter-btn" data-filter="Django">Django</button>
+            <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+            <button class="filter-btn" data-filter="React">React</button>
+          </div>
+
           <div class="projects-grid">
 
             <!-- Proyecto 1 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 2" />
-              </div> -->
+            <div class="project-card" data-tags="Python,Odoo,JavaScript">
               <div class="project-info">
                 <h3>Módulo list Show</h3>
-                <p>Este módulo extiende la funcionalidad de Odoo 18 para ocultar el botón que permite seleccionar columnas en vistas tipo lista (list view), específicamente el botón ubicado al final de la cabecera de la tabla.</h3>
+                <div class="project-description">
+                  <p class="description-short">Este módulo extiende la funcionalidad de Odoo 18 para ocultar el botón que permite seleccionar columnas en vistas tipo lista (list view).</p>
+                  <p class="description-full" style="display: none;">Este módulo extiende la funcionalidad de Odoo 18 para ocultar el botón que permite seleccionar columnas en vistas tipo lista (list view), específicamente el botón ubicado al final de la cabecera de la tabla.</p>
+                  <button class="read-more-btn" aria-label="Leer más sobre este proyecto">Leer más</button>
+                </div>
                 
                 <div class="project-tags">
                   <span>Python</span>
@@ -148,14 +165,11 @@
               </div>
             </div>
 
-            <!-- Proyecto 1 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 2" />
-              </div> -->
+            <!-- Proyecto 2 -->
+            <div class="project-card" data-tags="Python,Odoo,JavaScript">
               <div class="project-info">
                 <h3>Gestión de Temperaturas - Chart.JS</h3>
-                <p>Módulo que permite ubicar la temperatura mínima y máxima de las ciudades del Perú Con OpenAI - Odoo 17</h3>
+                <p>Módulo que permite ubicar la temperatura mínima y máxima de las ciudades del Perú Con OpenAI - Odoo 17</p>
                 
                 <div class="project-tags">
                   <span>Python</span>
@@ -173,14 +187,11 @@
               </div>
             </div>
 
-            <!-- Proyecto 1 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 2" />
-              </div> -->
+            <!-- Proyecto 3 -->
+            <div class="project-card" data-tags="Python,Odoo">
               <div class="project-info">
                 <h3>Gestión de Préstamos</h3>
-                <p>Módulo de Gestión de Préstamos Bancarios - Odoo 17</h3>
+                <p>Módulo de Gestión de Préstamos Bancarios - Odoo 17</p>
                 
                 <div class="project-tags">
                   <span>Python</span>
@@ -198,14 +209,11 @@
             </div>
 
 
-            <!-- Proyecto 1 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 2" />
-              </div> -->
+            <!-- Proyecto 4 -->
+            <div class="project-card" data-tags="Python,Django,JavaScript">
               <div class="project-info">
                 <h3>Portafolio web administrable - Django - Postgresql - Docker</h3>
-                <p>Portafolio web profesional con diseño minimalista y elegante.</h3>
+                <p>Portafolio web profesional con diseño minimalista y elegante.</p>
                 
                 <div class="project-tags">
                   <span>Python</span>
@@ -224,11 +232,8 @@
               </div>
             </div>
 
-            <!-- Proyecto 1 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 2" />
-              </div> -->
+            <!-- Proyecto 5 -->
+            <div class="project-card" data-tags="Python,Django,JavaScript">
               <div class="project-info">
                 <h3>Proyecto Django - Comida Rápida</h3>
                 <p>Desarrollo con Django, Python, Postgresql, JavaScript, Html, Css</p>
@@ -249,11 +254,8 @@
             </div>
 
 
-            <!-- Proyecto 1 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 2" />
-              </div> -->
+            <!-- Proyecto 6 -->
+            <div class="project-card" data-tags="Python,Odoo">
               <div class="project-info">
                 <h3>Importar imágenes de manera masiva - Odoo 17</h3>
                 <p>Módulo que permite importar imágenes de manera masiva a cualquier modelo, ubicando un campo de referencia</p>
@@ -272,11 +274,8 @@
             </div>
 
 
-            <!-- Proyecto 2 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 2" />
-              </div> -->
+            <!-- Proyecto 7 -->
+            <div class="project-card" data-tags="JavaScript,Python,Odoo">
               <div class="project-info">
                 <h3>Widget de geolocalizacion, utilizando leaflet - Odoo 18</h3>
                 <p>Desarrollo de un widget de geolocalización en Odoo 18 utilizando Leaflet, 
@@ -301,11 +300,8 @@
               </div>
             </div>
 
-            <!-- Proyecto 3 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 3" />
-              </div> -->
+            <!-- Proyecto 8 -->
+            <div class="project-card" data-tags="JavaScript,Python,Odoo">
               <div class="project-info">
                 <h3>Widget que permite colocar la funcion de agregar linea en la parte inicial
                     de la vista lista - Odoo 18</h3>
@@ -329,11 +325,8 @@
               </div>
             </div>
 
-            <!-- Proyecto 4 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 3" />
-              </div> -->
+            <!-- Proyecto 9 -->
+            <div class="project-card" data-tags="JavaScript">
               <div class="project-info">
                 <h3>Portafolio web profesional con diseño minimalista y elegante, creado con HTML, CSS, JavaScript, Vite y Tailwind CSS.</h3>
                 <p>Diseño limpio, moderno y responsivo, Animación de escritura tipo máquina en el nombre principal, Modo claro y oscuro con posibilidad de alternar entre ellos,
@@ -354,11 +347,8 @@
             </div>
 
 
-            <!-- Proyecto 5 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 3" />
-              </div> -->
+            <!-- Proyecto 10 -->
+            <div class="project-card" data-tags="Python,Odoo">
               <div class="project-info">
                 <h3>Modulo que simula un agente IA que verifica contenido del documento - Odoo 18</h3>
                 <p>Módulo para adjuntar documentos a contactos, analizar su contenido con IA y extraer información clave automáticamente.
@@ -378,11 +368,8 @@
               </div>
             </div>
 
-            <!-- Proyecto 1 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 1" />
-              </div> -->
+            <!-- Proyecto 11 -->
+            <div class="project-card" data-tags="Python,Django,JavaScript">
               <div class="project-info">
                 <h3>Proyecto Compra y Facturación en Django</h3>
                 <p>Proyecto de Compra y Facturación desarrollado en Django 2.2 que permite gestionar proveedores, 
@@ -406,11 +393,8 @@
               </div>
             </div>
 
-            <!-- Proyecto 6 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 1" />
-              </div> -->
+            <!-- Proyecto 12 -->
+            <div class="project-card" data-tags="Python,Odoo">
               <div class="project-info">
                 <h3>Modulo que permite realizar las conciliaciones bancarias de manera masiva por csv - odoo 16</h3>
                 <p>Permitir a los usuarios de Odoo realizar conciliaciones y desconciliaciones bancarias de forma masiva, 
@@ -430,11 +414,8 @@
               </div>
             </div>
 
-            <!-- Proyecto 7 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="https://via.placeholder.com/600x400" alt="Proyecto 1" />
-              </div> -->
+            <!-- Proyecto 13 -->
+            <div class="project-card" data-tags="JavaScript">
               <div class="project-info">
                 <h3>Página Web para la empresa AirFire Ingenieros</h3>
                 <p>Diseño limpio, moderno y responsivo, Modo claro y oscuro con posibilidad de alternar entre ellos,
@@ -452,11 +433,8 @@
               </div>
             </div>
 
-            <!-- Proyecto 8 -->
-            <div class="project-card">
-              <!-- <div class="project-img">
-                <img src="src/docs/img/ia.png" alt="Proyecto 1" />
-              </div> -->
+            <!-- Proyecto 14 -->
+            <div class="project-card" data-tags="React,JavaScript">
               <div class="project-info">
                 <h3>Asistente IA conectado con n8n</h3>
                 <p>Aplicación web con una interfaz conversacional limpia, moderna y profesional, inspirada en ChatGPT. 
@@ -649,20 +627,43 @@
               </div>
             </div>
             <div class="contact-form">
-              <form id="contact-form">
+              <form id="contact-form" novalidate>
                 <div class="form-group">
-                  <input type="text" id="name" name="name" placeholder="Tu Nombre" required />
+                  <label for="name" class="form-label">Nombre</label>
+                  <input type="text" id="name" name="name" placeholder="Tu Nombre" required minlength="2" aria-required="true" />
+                  <span class="form-error" role="alert"></span>
                 </div>
                 <div class="form-group">
-                  <input type="email" id="email" name="email" placeholder="Tu Email" required />
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" placeholder="tu@email.com" required aria-required="true" />
+                  <span class="form-error" role="alert"></span>
                 </div>
                 <div class="form-group">
-                  <input type="text" id="subject" name="subject" placeholder="Asunto" required />
+                  <label for="subject" class="form-label">Asunto</label>
+                  <input type="text" id="subject" name="subject" placeholder="Asunto" required minlength="3" aria-required="true" />
+                  <span class="form-error" role="alert"></span>
                 </div>
                 <div class="form-group">
-                  <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+                  <label for="message" class="form-label">Mensaje</label>
+                  <textarea id="message" name="message" placeholder="Tu mensaje aquí..." required minlength="10" aria-required="true"></textarea>
+                  <span class="form-error" role="alert"></span>
                 </div>
-                <button type="submit" class="btn btn-primary btn-full">Enviar Mensaje</button>
+                <button type="submit" class="btn btn-primary btn-full">
+                  <span class="btn-text">Enviar Mensaje</span>
+                  <span class="btn-loading" style="display: none;">
+                    <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <circle class="spinner-circle" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+                    </svg>
+                    Enviando...
+                  </span>
+                </button>
+                <div class="form-success" role="alert" style="display: none;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  ¡Mensaje enviado con éxito! Te contactaré pronto.
+                </div>
               </form>
             </div>
           </div>
